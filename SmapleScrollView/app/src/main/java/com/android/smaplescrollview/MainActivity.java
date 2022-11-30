@@ -23,17 +23,28 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         scrollView.setHorizontalScrollBarEnabled(true);
 
-        @android:drawable/sym_def_app_icon
         Resources res = getResources();
-        bitmap = (BitmapDrawable) res.getDrawable()
+        bitmap = (BitmapDrawable) res.getDrawable(R.drawable.image01);
+        int bitmapWidth = bitmap.getIntrinsicWidth();
+        int bitmapHeight = bitmap.getIntrinsicHeight();
+
+        imageView.setImageDrawable(bitmap);
+        imageView.getLayoutParams().width = bitmapWidth;
+        imageView.getLayoutParams().height = bitmapHeight;
     }
 
-    public void onButtom1Clicked(View view) {
+    public void onButton1Clicked(View view) {
         changeImage();
     }
 
     private void changeImage() {
         Resources res = getResources();
-        bit
+        bitmap = (BitmapDrawable) res.getDrawable(R.drawable.image02);
+        int bitmapWidth = bitmap.getIntrinsicWidth();
+        int bitmapHeight = bitmap.getIntrinsicHeight();
+
+        imageView.setImageDrawable(bitmap);
+        imageView.getLayoutParams().width = bitmapWidth;
+        imageView.getLayoutParams().height = bitmapHeight;
     }
 }
